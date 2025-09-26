@@ -3,18 +3,37 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>電卓アプリ</title>
+    <title>完全カスタマイズ電卓</title>
     <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.0/Sortable.min.js"></script>
   </head>
   <body>
-    <div class="calculator">
-      <div id="display" class="display">0</div>
-      <div class="buttons">
-        <button>7</button><button>8</button><button>9</button
-        ><button>/</button> <button>4</button><button>5</button
-        ><button>6</button><button>*</button> <button>1</button
-        ><button>2</button><button>3</button><button>-</button>
-        <button>0</button><button>C</button><button>=</button><button>+</button>
+    <div class="app">
+      <div class="calculator">
+        <div id="display-container">
+          <input type="text" id="display" />
+          <button id="mode-toggle">DEG</button>
+        </div>
+        <div id="buttons" class="buttons"></div>
+        <button id="edit-layout">配置編集モード</button>
+
+        <div id="layout-controls">
+          <input type="text" id="layout-name" placeholder="配置名" />
+          <button id="save-layout">保存</button>
+          <select id="load-layout"></select>
+          <button id="delete-layout">削除</button>
+          <button id="reset-layout">配置初期化</button>
+        </div>
+      </div>
+      <div class="sidebar">
+        <h2>変数保存</h2>
+        <div id="variable-controls">
+          <input type="text" id="variable-name" placeholder="変数名" />
+          <button id="save-variable">保存</button>
+        </div>
+        <ul id="variables"></ul>
+        <h2>履歴</h2>
+        <ul id="history"></ul>
       </div>
     </div>
     <script src="script.js"></script>

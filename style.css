@@ -2,46 +2,101 @@ body {
   font-family: Arial, sans-serif;
   display: flex;
   justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: #f0f0f0;
+  padding: 20px;
+  background: #f0f0f0;
 }
-
+.app {
+  display: flex;
+}
 .calculator {
-  width: 250px;
-  background-color: white;
+  background: white;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
-
-.display {
-  width: 100%;
-  height: 50px;
-  background: #222;
-  color: white;
-  text-align: right;
-  padding: 10px;
-  font-size: 1.5em;
-  margin-bottom: 10px;
-  border-radius: 5px;
-}
-
-.buttons {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+#display-container {
+  display: flex;
+  align-items: center;
   gap: 10px;
 }
-
-button {
-  padding: 20px;
-  font-size: 1.2em;
+#display {
+  flex: 1;
+  height: 50px;
+  font-size: 20px;
+  padding: 10px;
+}
+#mode-toggle {
+  width: 35px;
+  height: 35px;
   border: none;
-  background: #eee;
-  border-radius: 5px;
+  border-radius: 50%;
+  background: #666;
+  color: white;
   cursor: pointer;
 }
-
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 60px);
+  gap: 10px;
+  margin-top: 10px;
+}
+button {
+  height: 50px;
+  font-size: 18px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background: #eee;
+}
 button:hover {
   background: #ddd;
+}
+#edit-layout {
+  margin-top: 10px;
+  padding: 10px;
+  background: #444;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+#layout-controls {
+  margin-top: 10px;
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+#layout-controls input {
+  flex: 1;
+  padding: 5px;
+}
+#layout-controls button,
+#layout-controls select {
+  padding: 5px;
+}
+.sidebar {
+  margin-left: 20px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: sticky;
+  top: 10px;
+}
+.sidebar h2 {
+  margin-bottom: 5px;
+}
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+#variable-controls {
+  margin-top: 10px;
+  display: flex;
+  gap: 5px;
+}
+#variable-controls input {
+  flex: 1;
+  padding: 5px;
+}
+#variable-controls button {
+  padding: 5px;
 }
